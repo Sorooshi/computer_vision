@@ -39,8 +39,14 @@ Useful functions:
 
 %}
 M = size(test_image_feats,1);
+N = size(train_image_feats,1);
 k = 20;
-distances = vl_alldist2(train_image_feats', test_image_feats');
+% comparing each test sample with all of the trains samples:
+for i = 1 : M
+ for j = 1 : 
+ distances(i,j) = vl_alldist2( test_image_feats(i)',train_image_feats(j));
+ end 
+end 
 all_labels = unique(train_labels);
 n_labels = size(all_labels, 1);
 [~, indices] = sort(distances, 1);
