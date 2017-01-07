@@ -52,7 +52,7 @@ for ii = 1:M
     end
 end
 [~, label_indices] = max(count_labels,[],1);
-predicted_categories = all_labels(label_indices);
+predicted_categories = train_labels(label_indices);
 end
 
 
